@@ -31,7 +31,6 @@ Key features:
 
 - **main.c**: The source code for the system programming project.
 - **README.md**: This documentation file.
-- **Makefile**: A file to simplify the compilation process.
 
 ## Compilation Instructions
 
