@@ -25,7 +25,7 @@ Key features:
 ## Project Structure
 
 ```
-├── main.c
+├── main.c (originally named q2.c)
 ├── README.md
 ├── Makefile
 ```
@@ -39,23 +39,15 @@ Key features:
 To compile the program, you need a C compiler such as `gcc`. Use the following command in the terminal:
 
 ```bash
-gcc -o system_programming main.c
+gcc -o main main.c
 ```
-
-Alternatively, you can use the provided `Makefile` by running:
-
-```bash
-make
-```
-
-This will compile the program and generate the executable file named `system_programming`.
 
 ## Usage Instructions
 
 After compiling the program, run it from the command line with the following command:
 
 ```bash
-./system_programming
+./main
 ```
 
 The program will ask the user to enter a list of commands to be executed concurrently. Each command will be executed in a child process, and the program will wait for all processes to complete before exiting.
