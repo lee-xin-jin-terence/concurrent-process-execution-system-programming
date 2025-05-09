@@ -14,11 +14,11 @@ This repository contains the solution for an academic coursework in system progr
 
 ## Overview
 
-This program is a simple demonstration of system programming techniques in C. It simulates the creation of multiple child processes, each running a specific command in parallel. The program uses the `fork()` system call to create child processes and `exec()` to execute commands. It also includes a wait mechanism to synchronize the parent process with the completion of its children.
+This program is a simple demonstration of system programming techniques in C. It simulates the creation of multiple child processes, each running a specific command in parallel. The program uses the `fork()` system call to create child processes and `execl()` to execute commands. It also includes a wait mechanism to synchronize the parent process with the completion of its children.
 
 Key features:
 - Creation of multiple child processes using `fork()`.
-- Execution of commands using `exec()`.
+- Execution of commands using `execl()`.
 - Parent process waits for child processes to finish.
 - Error handling for invalid commands and process creation issues.
 
