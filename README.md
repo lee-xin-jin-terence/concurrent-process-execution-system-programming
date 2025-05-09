@@ -40,24 +40,31 @@ To compile the program, you need a C compiler such as `gcc`. Use the following c
 gcc -o main main.c
 ```
 
-## Usage Instructions
-
 After compiling the program, run it from the command line with the following command:
 
 ```bash
-./main
+sudo ./main
 ```
 
-The program will ask the user to enter a list of commands to be executed concurrently. Each command will be executed in a child process, and the program will wait for all processes to complete before exiting.
+The program expects a list of commands as arguments to be executed concurrently. Each command will be executed in a separate child process, and the program will wait for all processes to complete before exiting.
 
 ### Example:
 
 ```bash
-Enter commands separated by space (e.g., "ls pwd whoami"):
-ls pwd whoami
+sudo ./main ls pwd whoami
 ```
 
 This will create three child processes, each running `ls`, `pwd`, and `whoami` concurrently.
+
+## Code Explanation
+
+The code consists of a simple C program that forks a new process for each command provided as arguments. The program waits for each child process to finish before exiting.
+
+- **main.c**: The main file containing the logic for handling multiple child processes.
+- **fork()**: The function used to create a child process.
+- **execvp()**: The function used to execute the commands in the child process.
+- **waitpid()**: The function used to wait for the child processes to complete before the parent exits.
+
 
 ## License
 
