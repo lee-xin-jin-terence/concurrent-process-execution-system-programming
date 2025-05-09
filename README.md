@@ -62,7 +62,7 @@ The code consists of a simple C program that forks a new process for each comman
 
 - **main.c**: The main file containing the logic for handling multiple child processes.
 - **fork()**: The function used to create a child process.
-- **execvp()**: The function used to execute the commands in the child process.
+- **execl()**: The function used to execute the commands in the child process.
 - **waitpid()**: The function used to wait for the child processes to complete before the parent exits.
 
 
