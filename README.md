@@ -65,6 +65,9 @@ The code consists of a simple C program that forks a new process for each comman
 - **execl()**: The function used to execute the commands in the child process.
 - **waitpid()**: The function used to wait for the child processes to complete before the parent exits.
 
+## Test Documentation
+[concurrent-process-execution-documentation.pdf](https://github.com/user-attachments/files/20114484/concurrent-process-execution-documentation.pdf)
+
 
 ## License
 
