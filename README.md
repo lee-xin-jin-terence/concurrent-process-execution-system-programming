@@ -27,7 +27,6 @@ Key features:
 ```
 ├── main.c (originally named q2.c)
 ├── README.md
-├── Makefile
 ```
 
 - **main.c**: The source code for the system programming project.
