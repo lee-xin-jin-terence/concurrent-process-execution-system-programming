@@ -348,11 +348,26 @@ int main(int argc, char * argv[] )
 }
 
 
-/*---------------------------------------------------------*/
+/*---------------------------------------------------------
+ Initialise the command path for the array of Process
+
+  Parameters:
+	arrayOfCommandPath - char pointer array representing an array 
+ 			of command paths strings, where each element of 
+    			the array has not been initialized
+
+       childProcessArray - Process pointer representing an array
+       			of Process structs
+
+   	arrSize - integer value representing the size of arrayOfCommandPath &
+    			childProcessArray. The array size of arrayOfCommandPath,
+       			and childProcessArray is expected to be the same
+       			
+----------------------------------------------------------*/
 
 void structArrayInitialise(char * arrayOfCommandPath[],
-		           Process * childProcessArr,
-		           int arrSize)
+		           Process * childProcessArray,
+		           int arraySize)
 {
 
 	
@@ -362,10 +377,10 @@ void structArrayInitialise(char * arrayOfCommandPath[],
 	=================================================*/
 
 
-	for (int index = 0; index < arrSize; index++)
+	for (int index = 0; index < arraySize; index++)
 	{
 		
-		childProcessArr[index].commandPathPtr =
+		childProcessArray[index].commandPathPtr =
 				      arrayOfCommandPath[index];
 
 	}
@@ -373,7 +388,21 @@ void structArrayInitialise(char * arrayOfCommandPath[],
 
 
 
-/*---------------------------------------------------------*/
+/*---------------------------------------------------------
+ Fork out a process and perform exec() for each intended
+ processes in childProcessArr
+
+ Parameters:
+ 	childProcessArray - a pointer representing an array of
+  		Process structs (containing intended processes
+    		to be fork() and exec()
+
+      	arrSize - the size of the array childProcessArr
+
+
+ Return:
+ 	an integer representing the number of processes forked
+----------------------------------------------------------*/
 
 int forkAndExecChildProcesses(Process * childProcessArr,
 			      int arrSize)
