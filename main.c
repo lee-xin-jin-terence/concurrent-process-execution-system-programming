@@ -6,7 +6,8 @@
 * Aim: Execute commands in child processes
 *	concurrently
 *
-* Date: 19 June 2020
+* First created: 19 June 2020
+* Last updated: 22 May 2025
 *
 ******************************************/
 
@@ -506,13 +507,22 @@ int forkAndExecChildProcesses(Process * childProcessArr,
 }
 
 
-/*---------------------------------------------------------*/
+/*---------------------------------------------------------
+ Display the termination messages of each child process
+
+ Display whether each child process has terminated successfully
+ or not successfully
+
+ Parameters:
+ 	childProcessArry - an array  of child processes
+ 	arrSize - size of the array childProcessArr
+----------------------------------------------------------*/
 
 void displayAllChildTermMsg(const Process * childProcessArr,
 			    int arrSize)
 {
 
-	/*================================================
+	/*================================================Pa
 	 SECTION 1: Declaration of Variables
 	=================================================*/
 
@@ -583,7 +593,20 @@ void displayAllChildTermMsg(const Process * childProcessArr,
 
 
 
-/*---------------------------------------------------------*/
+/*---------------------------------------------------------
+  Query the command path of the process based on the 
+  pid of the process
+
+  Parameters:
+  	childProcessArr - an array of childProcessArr
+  	arrSize - size of the array of childProcessArr
+   	targetProcessId - the process id of the process to
+    			be searched
+
+  Return:
+  	char pointer representing the string of the command
+   	path of the process id
+-----------------------------------------------------------*/
 
 char* getCommandPathFromPid(const Process * childProcessArr,
 		 	    int arrSize, pid_t targetProcessId)
